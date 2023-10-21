@@ -3,6 +3,16 @@
 }
 
 section{
-  background-color: red;
+  background-color:white;
   display: flex;
+}
+
+@font-face {
+  font-family: 'KumbhSans';
+  src:local('KumbhSans-Bold') 
+      url('./fonts/KumbhSans-Bold.ttf') format('ttf');
+}
+
+.navbar-brand{
+  font-family: kumbhSans;
 }
