@@ -1,18 +1,100 @@
 .App {
   text-align: center;
 }
-
-section{
-  background-color:white;
+.navbar{
+  border-bottom: 2px solid rgb(230, 225, 225);
+}
+#brand{
+  color: hsl(0, 0%, 0%);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+#ul_navbar{
   display: flex;
+  gap: 30px;
+  position: static;  
+}
+#ul_navbar li{
+  position: static;
+  color: rgb(80, 82, 80);
+  padding: 10px;
+  margin-top: -15px;
 }
 
+#ul_navbar li:hover{
+  border-bottom:3px solid red ;
+  cursor: pointer;
+  margin-top: -15px;
+  padding: 10px;
+}
+.cart_avatar{
+  margin-left: 20px;
+  position: relative;
+  padding: 0px 50px;
+  
+}
+.cart{
+  cursor: pointer;
+}
+.avatar{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin-left: 30px;
+  border-radius: 50%;
+  border:1px solid hsl(26, 100%, 55%) ;
+}
+
+section{
+  display: inline-flex;
+  margin-top: 5rem;
+  position: relative;
+  width: 30%;
+}
+.main_display{
+  padding: 3rem;
+ 
+}
+.thumbnail{
+  height: 20px;
+  background-color: red;
+  padding: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 2rem;
+}
+.main_displayimage{
+  border-radius: 20px;
+  /* width: 100%;
+  height: 100%; */
+}
+.thumbnail{
+  position: relative;
+  background-color: red;
+  display:contents;
+
+}
+.info{
+  padding: 3.5rem;
+  margin-top: 3rem;
+  text-align: left;
+
+}
+h4{
+  color: hsl(26, 100%, 55%);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+  font-weight: bolder;
+  font-family:Arial, 'Helvetica', sans-serif;
+}
 @font-face {
-  font-family: 'KumbhSans';
-  src:local('KumbhSans-Bold') 
+  font-family: 'KumbhSansBold';
+  src:local('KumbhSansBold') 
       url('./fonts/KumbhSans-Bold.ttf') format('ttf');
 }
 
 .navbar-brand{
-  font-family: kumbhSans;
+  font-family: kumbhSansBold;
 }
