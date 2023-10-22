@@ -7,9 +7,26 @@ import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
 
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
-  // setImage('./image-product-1.jpg')
-  const imagesSet = ()=> {
-    setImage()
+  const [price, setPrice] = useState({
+    price: 125,
+    piece: 0,
+    total: 0
+  })
+ 
+  const plus = ()=>{
+    setPrice(prevState => {
+  
+      return{...prevState,total: prevState.total + 125.00, 
+        piece: prevState.piece + 1,
+      } 
+    })
+  }
+  const minus = ()=> {
+    setPrice(prevState => {
+      return {...prevState, total: prevState.total - 125,
+        piece: prevState.piece -1,
+      }
+    })
   }
 
   return (
@@ -58,15 +75,15 @@ function App() {
             <h4>SNEAKER COMPANY</h4>
             <h1>Fall Limited Sneakers</h1>
             <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
-            <h3>$125.00  <span>50%</span></h3>
-            <span>$250.00</span>
+            <h3> ${price.price}.00<span className='discount'>50%</span></h3>
+            <span>${price.total}.00</span>
             <div>
-              <span>
-                <button>-</button>
-                <span></span>
-                <button>+</button>
+              <span className='select_piece col-6'>
+                <h2 onClick={minus} className='minus_button col-4'>-</h2>
+                <p className='piece_no col-4'>{price.piece}</p>
+                <h2 onClick={plus} className='add_button col-4'>+</h2>
               </span>
-              <button>Add to cart</button>
+              <button><span><img src='./icon-cart.svg' /></span>Add to cart</button>
 
             </div>
 
