@@ -3,7 +3,8 @@ import './App.css';
 import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
-
+import Modal from './Modal';
+import Slide from './Slide';
 
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
@@ -12,7 +13,38 @@ function App() {
     piece: 0,
     total: 0
   });
-  
+  const [show, setShow] = useState(false);
+  const [active, setActive] = useState(0);
+
+  const images = [
+   
+    {
+      image_url:
+        "./image-product-1.jpg"
+    },
+    {
+      image_url:
+        "./image-product-2.jpg"
+    },
+    {
+      image_url:
+        "./image-product-3.jpg"
+    },
+    {
+      image_url:
+        "./image-product-4.jpg"
+    }
+  ];
+
+  const handleClick = (index) => {
+    setActive(index);
+    setShow(true);
+  };
+
+  const onClose = () => {
+    setShow(false);
+  };
+ 
  
   const plus = ()=>{
     setPrice(prevState => {
@@ -61,8 +93,7 @@ function App() {
         <section className='container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
             <div className='main_display'>
-              <img src={image} className='img-fluid main_displayimage' />
-            </div>
+                        </div>
             <div className='thumbnail'>
               <img src='./image-product-1-thumbnail.jpg' onClick={()=> setImage('./image-product-1.jpg')} className='img-fluid'/>
               <img src='./image-product-2-thumbnail.jpg' onClick={()=> setImage('./image-product-2.jpg')} className='img-fluid'/>
@@ -70,6 +101,20 @@ function App() {
               <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid'/>
             
             </div>
+            <Modal show={show} title="Lightbox" onClose={onClose} >
+        <Slide images={images} active={active} setActive={setActive} />
+      </Modal>
+      <div className="image-list">
+        {images.map((e, i) => (
+          <div
+            className={i === active ? "active" : ""}
+            onClick={() => handleClick(i)}
+            key={e.caption}
+          >
+            <img src={e.image_url} alt={e.caption} />
+          </div>
+        ))}
+      </div>
           </div>
 
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 info'>
@@ -98,6 +143,6 @@ function App() {
       </div>
     </div>
   );
-}
+        }
 
 export default App;
