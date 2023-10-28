@@ -1,75 +1,85 @@
-import { useState } from "react";
-import "./modal.css";
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import './modal.css'
 
-const Modal = ({ children, show, onClose, title }) => {
-    const [image, setImage] = useState('./image-product-1.jpg')
+function ShowModal() {
 
-
-    return (
-    show && (
-      <>
-        <div className="modal-backdrop" onClick={onClose} />
-        <div className="modal-wrapper">
-          <div className="modal-content">
-            <div className="modal-header">
-              <div className="modal-title">{title}</div>
-              <div onClick={onClose} className="modal-close">
-                X
-                <img src={image} className='img-fluid main_displayimage' />
+  const [show, setShow] = useState(false);
+  const [image,setImage] = useState('./image-product-1.jpg');
+  const [selected, setSelected] = useState(false);
   
-              </div>
-            </div>
-            <div className="modal-body">{children}</div>
-          </div>
-        </div>
-      </>
-    )
+  // i'm saving full img in this array so i can access it when thumbnail is clicked
+
+  const imageArray = [ {
+    1: './image-product-1.png', 2: './image-product-2.png', 3: './image-product-3.png', 4: './image-product-4.png'
+  } ];
+
+
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const toggleBorder = () => {
+    setSelected(!selected);
+    setImage('./image-product-1.jpg')
+  };
+  const toggleBorder2 = () => {
+    setSelected(!selected);
+    setImage('./image-product-2.jpg')
+  };
+  const toggleBorder3 = () => {
+    setSelected(!selected);
+    setImage('./image-product-2.jpg')
+  };
+  
+
+  return (
+    <>
+    <img src={image} onClick={handleShow} className='img-fluid main-img'/>
+    <div className='thumbnail'>
+    <label>
+    <input type='radio' className='radio'/><span><img src='./image-product-1-thumbnail.jpg' onClick={toggleBorder} className={selected ? "selected-image": 'img-fluid thumb'}/>
+          </span>
+          <input
+            type="radio"
+            name="tabset"
+            id="tab1"
+            value="All"
+            checked
+          />
+    </label>
+   
+                  <img src='./image-product-2-thumbnail.jpg' onClick={toggleBorder2} className={selected ? "selected-image": 'img-fluid thumb'}/>
+              <img src='./image-product-3-thumbnail.jpg' onClick={toggleBorder3} className={selected ? "selected-image": 'img-fluid thumb'}/>
+              <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid thumb'/>
+            
+    </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton className='header'>
+         
+        </Modal.Header>
+        <Modal.Body className='modal_body'>
+        <button>  </button>
+        <img src={image} alt='image' className='img-fluid' />
+        
+        </Modal.Body>
+        <Modal.Footer  className='thumbnail'>
+        
+             
+             <img src='./image-product-1-thumbnail.jpg' onClick={()=> setImage('./image-product-1.jpg')} className='img-fluid'/>
+             <img src='./image-product-2-thumbnail.jpg' onClick={()=> setImage('./image-product-2.jpg')} className='img-fluid'/>
+             <img src='./image-product-3-thumbnail.jpg' onClick={()=> setImage('./image-product-3.jpg')} className='img-fluid'/>
+             <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid'/>
+           
+        </Modal.Footer>
+      </Modal>
+    </>
   );
-};
+}
 
-const Slider = ({ images, active, setActive }) => {
-    const onNext = () => {
-      if (active < images.length - 1) {
-        setActive(active + 1);
-      }
-    };
-  
-    const onPrev = () => {
-      if (active > 0) {
-        setActive(active - 1);
-      }
-    };
-  
-    return (
-      <div className="slider">
-        <div className="slides">
-          {images.map((e, i) => (
-            <Slide key={e.caption} {...e} active={i === active} />
-          ))}
-        </div>
-        <div className="navigation">
-          <div className="navigation-next-prev">
-            <div class="next-prev prev" onClick={onPrev}>
-              {" "}
-              &lt;{" "}
-            </div>
-            <div class="next-prev next" onClick={onNext}>
-              {" "}
-              &gt;{" "}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
-  const Slide = ({ image_url, caption, active }) => {
-    return (
-      <div className={`slide ${active ? "active" : ""}`}>
-        <img src={image_url} alt={caption} />
-        <span>{caption}</span>
-      </div>
-    );
-  };
-
-export default Modal;
+export default ShowModal;
