@@ -5,10 +5,12 @@
 
 .thumbnail{
     display:flexbox;
+    border: none;
+
 }
 .thumb{
     margin: 10px;
-    width: 5rem ;
+    width: 4rem ;
     border-radius: 10px;
     display: flexbox;
 }
@@ -27,14 +29,29 @@ input[type='radio']:checked {
     position: relative;
     border: 2px solid red;
 }
-/* 
+
 .header{
-    background-color: red;
-    background: rgba(255, 255, 255, 0.1);
-    color: black;
-
+    border: none; 
 }
-.modal_body{
-    
-
+/* .modal-close{
+    background-color: blue;
+   
 } */
+.modal_body{
+    border-radius: 15px;
+}
+.main_img{
+    border-radius:15px ;
+    margin-bottom: -30px;
+}
+
+.btn-close{
+    background-color: red;    
+}
+.modal-content{
+    background: transparent;
+    border: none; 
+    box-shadow: none;
+}
+
+

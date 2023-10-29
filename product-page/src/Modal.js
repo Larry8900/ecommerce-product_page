@@ -59,22 +59,23 @@ function ShowModal() {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
+        className='modall'
       >
         <Modal.Header closeButton className='header'>
          
         </Modal.Header>
         <Modal.Body className='modal_body'>
-        <button>  </button>
-        <img src={image} alt='image' className='img-fluid' />
+        
+        <img src={image} alt='image' className='img-fluid main_img' />
         
         </Modal.Body>
         <Modal.Footer  className='thumbnail'>
         
              
-             <img src='./image-product-1-thumbnail.jpg' onClick={()=> setImage('./image-product-1.jpg')} className='img-fluid'/>
-             <img src='./image-product-2-thumbnail.jpg' onClick={()=> setImage('./image-product-2.jpg')} className='img-fluid'/>
-             <img src='./image-product-3-thumbnail.jpg' onClick={()=> setImage('./image-product-3.jpg')} className='img-fluid'/>
-             <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid'/>
+             <img src='./image-product-1-thumbnail.jpg' onClick={()=> setImage('./image-product-1.jpg')} className='img-fluid thumb'/>
+             <img src='./image-product-2-thumbnail.jpg' onClick={()=> setImage('./image-product-2.jpg')} className='img-fluid thumb'/>
+             <img src='./image-product-3-thumbnail.jpg' onClick={()=> setImage('./image-product-3.jpg')} className='img-fluid thumb'/>
+             <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid thumb'/>
            
         </Modal.Footer>
       </Modal>
