@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
 import Modal from './Modal';
 import ShowModal from './Modal';
+//import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
@@ -34,7 +35,7 @@ function App() {
     <div className="App col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     
       <div className='body'>
-        <Nav className='navbar navbar-expand-lg navbar-light bg-light justify-content-between'>
+        <Nav id='navhead' className='navbar navbar-expand-lg navbar-light bg-light justify-content-between navhead'>
           <button className='navbar-toggler' type='button' data-toggle="collapse"
           data-target=".navbaravDropdown" aria-controls="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
           >
@@ -62,23 +63,10 @@ function App() {
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
             <div className='main_display'>
               <ShowModal />
+              {/* <BsFillArrowRightCircleFill /> */}
             </div>
             
           
-            {/* <Modal show={show} title="Lightbox" onClose={onClose} >
-        <Slide images={images} active={active} setActive={setActive} />
-      </Modal>
-      <div className="image-list">
-        {images.map((e, i) => (
-          <div
-            className={i === active ? "active" : ""}
-            onClick={() => handleClick(i)}
-            key={e.caption}
-          >
-            <img src={e.image_url} alt={e.caption} />
-          </div>
-        ))}
-      </div> */}
           </div>
 
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 info'>

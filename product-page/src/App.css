@@ -51,36 +51,44 @@ section{
   position: relative;
   width: 30%;
 }
-.main_display{
-  padding: 3rem;
+
+@media only screen and (max-width: 600px) {
+  section {
+    display: block;
+    width: max-content;
+    margin-top: 0px;
+    width: 100%;
+    
+  }
+  .info{
+    padding: 5.5rem;
+    text-align: left;
+    margin-top: -3rem;
+  }
  
+  
 }
-.thumbnail{
-  height: 20px;
-  background-color: red;
-  padding: 20px;
-  margin-top: 20px;
-  cursor: pointer;
-  display: flex;
-  gap: 2rem;
+@media (min-width: 610px) {
+  .navhead{
+    padding: 40px;
+  }
+  .info{
+    padding: 5.5rem;
+    margin-top: 3rem;
+    text-align: left;
+  }
+  .main_display{
+    padding: 3rem;
+   
+  }
 }
+
 .main_displayimage{
   border-radius: 20px;
   /* width: 100%;
   height: 100%; */
 }
-.thumbnail{
-  position: relative;
-  background-color: red;
-  display:contents;
 
-}
-.info{
-  padding: 3.5rem;
-  margin-top: 3rem;
-  text-align: left;
-
-}
 h4{
   color: hsl(26, 100%, 55%);
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -131,15 +139,6 @@ h1{
   font-weight: 600;
   font-size: 25px;
   cursor: pointer;
-}
-@font-face {
-  font-family: 'KumbhSansBold';
-  src:local('KumbhSansBold') 
-      url('./fonts/KumbhSans-Bold.ttf') format('ttf');
-}
-
-.navbar-brand{
-  font-family: kumbhSansBold;
 }
 
 
