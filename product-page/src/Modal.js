@@ -19,40 +19,19 @@ function ShowModal() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const toggleBorder = () => {
-    setSelected(!selected);
-    setImage('./image-product-1.jpg')
-  };
-  const toggleBorder2 = () => {
-    setSelected(!selected);
-    setImage('./image-product-2.jpg')
-  };
-  const toggleBorder3 = () => {
-    setSelected(!selected);
-    setImage('./image-product-2.jpg')
-  };
+ 
   
 
   return (
     <>
     <img src={image} onClick={handleShow} className='img-fluid main-img'/>
     <div className='thumbnail'>
-    <label>
-    <input type='radio' className='radio'/><span><img src='./image-product-1-thumbnail.jpg' onClick={toggleBorder} className={selected ? "selected-image": 'img-fluid thumb'}/>
-          </span>
-          <input
-            type="radio"
-            name="tabset"
-            id="tab1"
-            value="All"
-            checked
-          />
-    </label>
-   
-                  <img src='./image-product-2-thumbnail.jpg' onClick={toggleBorder2} className={selected ? "selected-image": 'img-fluid thumb'}/>
-              <img src='./image-product-3-thumbnail.jpg' onClick={toggleBorder3} className={selected ? "selected-image": 'img-fluid thumb'}/>
-              <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid thumb'/>
-            
+
+        <img src='./image-product-1-thumbnail.jpg' onClick={()=> setImage('./image-product-1.jpg')} className='img-fluid thumb' />
+        <img src='./image-product-2-thumbnail.jpg' onClick={()=> setImage('./image-product-2.jpg')} className='img-fluid thumb'/>
+        <img src='./image-product-3-thumbnail.jpg' onClick={()=> setImage('./image-product-3.jpg')} className='img-fluid thumb'/>
+        <img src='./image-product-4-thumbnail.jpg' onClick={()=> setImage('./image-product-4.jpg')} className='img-fluid thumb'/>
+                
     </div>
       <Modal
         show={show}
