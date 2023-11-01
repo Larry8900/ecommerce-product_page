@@ -68,7 +68,9 @@ function App() {
         <section className='container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
             <div className='main_display'>
-            <body>
+            
+            {cartOpen && (
+              <body className='cartopen container'>
                 <h2>Cart</h2>
                 <hr />
                 <div>
@@ -77,7 +79,10 @@ function App() {
                     <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
                     <span>delete icon </span>
                 </div>
+                <button>Checkout</button>
             </body>
+            )}
+            
               <ShowModal />
               {/* <BsFillArrowRightCircleFill /> */}
             </div>

@@ -56,9 +56,17 @@ section{
   section {
     display: block;
     width: max-content;
-    margin-top: 0px;
-    width: 100%;
-    
+    margin-top: 0px;    
+  }
+  .cartopen{
+    padding: 10px 30px;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+  }
+  .cartopen > h2{
+    text-align: left;
+    font-size: 20px;
   }
   .info{
     padding: 5.5rem;
