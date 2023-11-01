@@ -5,16 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
 import Modal from './Modal';
 import ShowModal from './Modal';
+import Cart from './Cart';
 //import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
+  const [cartOpen, setCartOpen] = useState(false);
   const [price, setPrice] = useState({
     price: 125,
     piece: 0,
     total: 0
   });
-  
+ 
+
+
   const plus = ()=>{
     setPrice(prevState => {
   
@@ -31,6 +35,7 @@ function App() {
     })
   }
 
+  const cartToggle = () => setCartOpen(!cartOpen);
   return (
     <div className="App col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     
@@ -54,14 +59,25 @@ function App() {
           </div>
           
           <NavItem className='cart_avatar'>
-            <span><img src='./icon-cart.svg' className='cart' alt='icon-cart'/></span>
+            <span><img src='./icon-cart.svg' onClick={cartToggle}  className='cart' alt='icon-cart'/></span>
             <span><img src='./image-avatar.png' className='img-fluid avatar' alt='avatat-image' /></span>
           </NavItem>
 
         </Nav>
+        
         <section className='container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
             <div className='main_display'>
+            <body>
+                <h2>Cart</h2>
+                <hr />
+                <div>
+                    <img src='./image-product-1-thumbnail.jpg' />
+                    <p>Fall Limited Edition Sneakers</p>
+                    <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
+                    <span>delete icon </span>
+                </div>
+            </body>
               <ShowModal />
               {/* <BsFillArrowRightCircleFill /> */}
             </div>
