@@ -1,8 +1,9 @@
 .App {
   text-align: center;
 }
+
 .navbar{
-  border-bottom: 2px solid rgb(230, 225, 225);
+  border-bottom: 2px solid rgb(230, 225, 225);  
 }
 #brand{
   color: hsl(0, 0%, 0%);
@@ -47,16 +48,21 @@
 
 section{
   display: inline-flex;
-  margin-top: 5rem;
+  margin-top: 1rem;
   position: relative;
-  width: 30%;
+  
 }
 
 @media only screen and (max-width: 600px) {
   section {
     display: block;
     width: max-content;
-    margin-top: 0px;    
+    margin-top: 0px; 
+     
+  }
+  .main_display{
+    padding: 0px;
+    background-color: red;
   }
   .cartopen{
     padding: 10px 30px;
@@ -74,6 +80,7 @@ section{
     margin-top: -3rem;
   }
  
+ 
   
 }
 @media (min-width: 610px) {
@@ -89,6 +96,10 @@ section{
     padding: 3rem;
    
   }
+  .prev_image, .next_image{
+    display: none;
+  }
+  
 }
 
 .main_displayimage{

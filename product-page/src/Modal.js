@@ -7,17 +7,49 @@ import './modal.css'
 function ShowModal() {
 
   const [show, setShow] = useState(false);
-  const [image,setImage] = useState('./image-product-1.jpg');
+  const [image, setImage] = useState({
+    image: './image-product-1.jpg',
+    id: 1
+  });
+  const [num,setNum] =useState(1)
   const [selected, setSelected] = useState(false);
   
    const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
- 
+
+  const next = () => {
+    setImage((prevState) => {
+      const nextId = prevState.id + 1;
+      const imageId = String(nextId).padStart(2,''); // Format to two digits with leading zeros
+      const imagePath = `./image-product-${imageId}.jpg`;
+      console.log(`Next image ID: ${imageId}`);
+      console.log(`Next image path: ${imagePath}`);
+      return {
+        ...prevState,
+        id: nextId,
+        image: imagePath,
+      };
+    });
+  };
   
+
+ 
+//   const next = ()=> {
+//     setImage(prevState => {
+//       return {...prevState, id: prevState.id + 1,
+//         image:`./image-product-${prevState.id}.jpg` ,
+//       }
+//     })
+//   }
 
   return (
     <>
-    <img src={image} onClick={handleShow} className='img-fluid main-img'/>
+    <div>
+        <img src='./icon-previous.svg' alt='previous' className='prev_image' />
+        <img src={image} onClick={handleShow} className='img-fluid main-img'/>
+        <img src='./icon-next.svg' onClick={next} alt='previous' className='next_image' />
+    </div>
+    
     
     
     <div className='thumbnail'>

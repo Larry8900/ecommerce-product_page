@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
 import Modal from './Modal';
 import ShowModal from './Modal';
+
 import Cart from './Cart';
-//import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
@@ -36,17 +36,18 @@ function App() {
   }
 
   const cartToggle = () => setCartOpen(!cartOpen);
+
+
   return (
     <div className="App col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     
       <div className='body'>
-        <Nav id='navhead' className='navbar navbar-expand-lg navbar-light bg-light justify-content-between navhead'>
-          <button className='navbar-toggler' type='button' data-toggle="collapse"
-          data-target=".navbaravDropdown" aria-controls="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
-          >
-            <span className='navbar-toggler-icon'></span>
-          </button>
-          <NavLink className='navbar-brand mb-4 h1' id='brand'>sneakers</NavLink>
+        <Nav id='navhead' className='navbar navbar-expand-lg navbar-light bg-light justify-content-between ps-2 '>
+          
+          <img src='./icon-menu.svg' alt='menu' className='' />
+         
+          <img src='./logo.svg' alt='logo' className='navbar-logo ps-5' />
+          
           
           <div className='collapse navbar-collapse' id='navbarNavDropdown'>
             <ul className='navbar-nav mr-auto inline' id='ul_navbar'>
@@ -67,21 +68,21 @@ function App() {
         
         <section className='container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
-            <div className='main_display'>
+            <div className='main_display ps-0'>
             
-            {cartOpen && (
-              <body className='cartopen container'>
-                <h2>Cart</h2>
-                <hr />
-                <div>
-                    <img src='./image-product-1-thumbnail.jpg' />
-                    <p>Fall Limited Edition Sneakers</p>
-                    <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
-                    <span>delete icon </span>
-                </div>
-                <button>Checkout</button>
-            </body>
-            )}
+              {cartOpen && (
+                <div className='cartopen container'>
+                  <h2>Cart</h2>
+                  <hr />
+                  <div>
+                      <img src='./image-product-1-thumbnail.jpg' />
+                      <p>Fall Limited Edition Sneakers</p>
+                      <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
+                      <span>delete icon </span>
+                  </div>
+                  <button>Checkout</button>
+              </div>
+              )}
             
               <ShowModal />
               {/* <BsFillArrowRightCircleFill /> */}
@@ -100,10 +101,13 @@ function App() {
             <span>${price.total}.00</span>
             <div>
               <span className='select_piece col-6'>
-                <h2 onClick={minus} className='minus_button col-4'>-</h2>
+                <img src='./icon-minus.svg' alt='icon-minus' onClick={minus} className='minus' />
+                
                 <p className='piece_no col-4'>{price.piece}</p>
-                <h2 onClick={plus} className='add_button col-4'>+</h2>
+                <img src='./icon-plus.svg' alt='icon-plus' onClick={plus} className='plus' />
+                
               </span>
+              
               <button><span><img src='./icon-cart.svg' /></span>Add to cart</button>
 
             </div>
