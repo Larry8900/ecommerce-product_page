@@ -31,6 +31,24 @@ function ShowModal() {
       };
     });
   };
+
+  const previous = () => {
+    setImage((prevState) => {
+      const nextId = prevState.id - 1;
+      const imageId = String(nextId).padStart(2,''); // Format to two digits with leading zeros
+      const imagePath = `./image-product-${imageId}.jpg`;
+      console.log(`Next image ID: ${imageId}`);
+      console.log(`Next image path: ${imagePath}`);
+      return {
+        ...prevState,
+        id: nextId,
+        image: imagePath,
+      };
+    });
+  };
+  
+
+
   
 
  
@@ -44,9 +62,10 @@ function ShowModal() {
 
   return (
     <>
-    <div>
-        <img src='./icon-previous.svg' alt='previous' className='prev_image' />
-        <img src={image} onClick={handleShow} className='img-fluid main-img'/>
+    <div className='setDiv'>
+        
+        <img src={image.image} onClick={handleShow} className='img-fluid main-img'/>
+        <img src='./icon-previous.svg' onClick={previous} alt='previous' className='prev_image' />
         <img src='./icon-next.svg' onClick={next} alt='previous' className='next_image' />
     </div>
     
