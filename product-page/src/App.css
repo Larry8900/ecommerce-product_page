@@ -62,13 +62,13 @@ section{
   }
   .main_display{
     padding: 0px;
-    background-color: red;
   }
   .cartopen{
     padding: 10px 30px;
-    position: relative;
+    position: absolute;
     z-index: 1;
     border-radius: 15px;
+    background-color: white;
   }
   .cartopen > h2{
     text-align: left;

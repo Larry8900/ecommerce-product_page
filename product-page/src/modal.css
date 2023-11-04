@@ -27,7 +27,6 @@
         position: absolute;
         top: 45%;
         right: 2%;
-        cursor: pointer;
         
       }
       .prev_image{
@@ -39,13 +38,14 @@
         position: absolute;
         left: 2%;
         top: 45%;
-        cursor: pointer;
         
       }
 
       .setDiv{
         position: relative;
 	    width: 100%;
+        padding: 0px;
+        margin: 0;
       }
       
       */
@@ -59,6 +59,7 @@
         padding: 0px;
         height: 25em;
         width: 100%;
+        border-radius: 0px;
     }
     section{
         padding: 0px;
