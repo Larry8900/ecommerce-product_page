@@ -31,7 +31,10 @@ function App() {
   }
   const minus = ()=> {
     setPrice(prevState => {
-      setCheckout(false)
+      if(prevState.piece < 2){
+        setCheckout(false)
+      }
+      
       return {...prevState, total: prevState.total - 125,
         piece: prevState.piece -1,
       }
@@ -39,11 +42,7 @@ function App() {
   }
 
   const cartToggle = () => setCartOpen(!cartOpen);
-//   const cartCheckout = ()=>{
-//     if(price.piece > 1){
-//     setCheckout(true)
-//   }
-// }
+
 
 
   return (
@@ -82,7 +81,10 @@ function App() {
                 <div className='cartopen col-xs-11 col-sm-11 col-md-4 col-xl-4'>
                   <h2>Cart</h2>
                   <hr />
+                 
+
                   {checkout && (
+
                     <div className='cart-checkout '>
 
                     <div className='cart-div'>
@@ -103,7 +105,10 @@ function App() {
                     </div>
                     
                     
-                  )}
+                  )
+                  
+                  }
+                  
                   
                   
               </div>
