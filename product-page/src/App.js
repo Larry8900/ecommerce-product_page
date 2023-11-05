@@ -40,6 +40,14 @@ function App() {
       }
     })
   }
+  const deleteItem = () => {
+    setPrice(prevState => {
+        setCheckout(false)
+      
+      return { ...prevState, total:0, piece: 0}
+    })
+    
+  }
 
   const cartToggle = () => setCartOpen(!cartOpen);
 
@@ -78,7 +86,7 @@ function App() {
             <div className='main_display ps-0'>
             
               {cartOpen && (
-                <div className='cartopen col-xs-11 col-sm-11 col-md-4 col-xl-4'>
+                <div className='cartopen col-xs-11 col-sm-11 col-md-4 col-xl-4 '>
                   <h2>Cart</h2>
                   <hr />
                  
@@ -97,12 +105,12 @@ function App() {
                         
                       </span>
                       <span className='p-1'>
-                        <img src='./icon-delete.svg' /> 
+                        <img src='./icon-delete.svg' onClick={deleteItem}/> 
                       </span>
                      
                   </div>
-                  <button className='checkout-btn'>Checkout</button>
-                    </div>
+                    <button className='checkout-btn'>Checkout</button>
+                  </div>
                     
                     
                   )
