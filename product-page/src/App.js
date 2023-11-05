@@ -140,10 +140,15 @@ function App() {
             <div>
               <span className='select_piece col-12'>
                 <span className='col-xs-4 col-sm-4 col-md-4 col-xl-4 addPlus-btn'>
-                  <img src='./icon-minus.svg' alt='icon-minus' onClick={minus} className='minus' />
-                  
-                  <p className='piece_no col-4'>{price.piece}</p>
-                  <img src='./icon-plus.svg' alt='icon-plus' onClick={plus} className='plus' />
+                  <span >
+                    <img src='./icon-minus.svg' alt='icon-minus' className='minus' onClick={minus}  />
+                  </span>
+                  <span>
+                    <p className='piece_no col-4'>{price.piece}</p>
+                  </span>
+                  <span>
+                    <img src='./icon-plus.svg' alt='icon-plus' onClick={plus} className='plus' />
+                  </span>
                   
                 </span>
                 <button className='col-xs-6 col-sm-6 col-md-6 col-xl-6'>
