@@ -131,10 +131,10 @@ function App() {
 
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 info'>
             <h4>SNEAKER COMPANY</h4>
-            <h1>Fall Limited Sneakers</h1>
+            <h1>Fall Limited Edition Sneakers</h1>
             <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
             <div className='price'>
-            <h3> ${price.price}.00</h3><span className='discount'>50%</span>
+            <h3> ${price.price}.00</h3><span className='discount ms-2'>50%</span>
             </div>
             <span>${price.total}.00</span>
             <div>

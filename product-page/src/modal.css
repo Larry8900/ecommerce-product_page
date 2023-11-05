@@ -64,6 +64,9 @@
     section{
         padding: 0px;
     }
+    .thumbnail{
+        display: none;
+    }
 }
 .thum{
     margin-top: 3rem;
