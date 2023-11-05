@@ -227,33 +227,45 @@ h4{
 }
 .select_piece{
   display: flex;
+  /*
   text-align: center;
   background-color: rgb(236, 234, 234);
   margin: 10px 0px;
+  border-radius: 10px; */
+}
+.addPlus-btn{
+  display: flex;
+  background-color: gray;
   border-radius: 10px;
+  padding: 5px;
+  align-content: space-evenly;
+  margin: 10px;
+  position: relative;
+  left: -2%;
+
 }
 .minus_button{
-  color: hsl(26, 100%, 55%);
+  /* color: hsl(26, 100%, 55%);
   border-radius: 5px 0px 0px 5px;
   border: 0px ;
   font-weight: 600;
   font-size: 25px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 .piece_no{
-  color: black;
+  /* color: black;
   border: 0px ;
   font-weight: 600;
  
-  font-size: 20px;
+  font-size: 20px; */
 }
 .add_button{
-  color: hsl(26, 100%, 55%);
+  /* color: hsl(26, 100%, 55%);
   border-radius: 0px 5px 5px 0px;
   border: 0px ;
   font-weight: 600;
   font-size: 25px;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 

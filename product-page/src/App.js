@@ -138,16 +138,20 @@ function App() {
             </div>
             <span>${price.total}.00</span>
             <div>
-              <span className='select_piece col-6'>
-                <img src='./icon-minus.svg' alt='icon-minus' onClick={minus} className='minus' />
-                
-                <p className='piece_no col-4'>{price.piece}</p>
-                <img src='./icon-plus.svg' alt='icon-plus' onClick={plus} className='plus' />
-                
+              <span className='select_piece col-12'>
+                <span className='col-xs-4 col-sm-4 col-md-4 col-xl-4 addPlus-btn'>
+                  <img src='./icon-minus.svg' alt='icon-minus' onClick={minus} className='minus' />
+                  
+                  <p className='piece_no col-4'>{price.piece}</p>
+                  <img src='./icon-plus.svg' alt='icon-plus' onClick={plus} className='plus' />
+                  
+                </span>
+                <button className='col-xs-6 col-sm-6 col-md-6 col-xl-6'>
+                  <span><img src='./icon-cart.svg' /></span>Add to cart</button>
+
               </span>
               
-              <button><span><img src='./icon-cart.svg' /></span>Add to cart</button>
-
+              
             </div>
 
 
