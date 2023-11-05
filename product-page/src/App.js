@@ -11,6 +11,7 @@ import Cart from './Cart';
 function App() {
   const [image, setImage] = useState('./image-product-1.jpg');
   const [cartOpen, setCartOpen] = useState(false);
+  const [checkout, setCheckout] = useState(false);
   const [price, setPrice] = useState({
     price: 125,
     piece: 0,
@@ -21,6 +22,7 @@ function App() {
 
   const plus = ()=>{
     setPrice(prevState => {
+        setCheckout(true)
   
       return{...prevState,total: prevState.total + 125.00, 
         piece: prevState.piece + 1,
@@ -29,6 +31,7 @@ function App() {
   }
   const minus = ()=> {
     setPrice(prevState => {
+      setCheckout(false)
       return {...prevState, total: prevState.total - 125,
         piece: prevState.piece -1,
       }
@@ -36,6 +39,11 @@ function App() {
   }
 
   const cartToggle = () => setCartOpen(!cartOpen);
+//   const cartCheckout = ()=>{
+//     if(price.piece > 1){
+//     setCheckout(true)
+//   }
+// }
 
 
   return (
@@ -71,16 +79,33 @@ function App() {
             <div className='main_display ps-0'>
             
               {cartOpen && (
-                <div className='cartopen container'>
+                <div className='cartopen col-xs-11 col-sm-11 col-md-4 col-xl-4'>
                   <h2>Cart</h2>
                   <hr />
-                  <div>
-                      <img src='./image-product-1-thumbnail.jpg' />
-                      <p>Fall Limited Edition Sneakers</p>
-                      <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
-                      <span>delete icon </span>
+                  {checkout && (
+                    <div className='cart-checkout '>
+
+                    <div className='cart-div'>
+                      <span className='col-2'>
+                        <img src='./image-product-1-thumbnail.jpg' className='img-fluid cart-image'/>
+                      </span>
+                      <span className='cart-checkout col-xs-9 col-sm-9 col-md-10 col-xl-10'>
+                        <p>Fall Limited Edition Sneakers</p>
+                        <h4> ${price.price}.00 x {price.piece} <span>${price.total}.00</span></h4>
+                        
+                      </span>
+                      <span className='p-1'>
+                        <img src='./icon-delete.svg' /> 
+                      </span>
+                     
                   </div>
-                  <button>Checkout</button>
+                  <button className='checkout-btn'>Checkout</button>
+                    </div>
+                    
+                    
+                  )}
+                  
+                  
               </div>
               )}
             
