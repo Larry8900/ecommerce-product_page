@@ -16,6 +16,7 @@
     padding: 10px;
     cursor: pointer;
 }
+
 @media (min-width: 610px) {
     .setDiv{
         position:relative;

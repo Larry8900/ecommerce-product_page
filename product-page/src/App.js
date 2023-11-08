@@ -57,15 +57,15 @@ function App() {
     <div className="App col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
     
       <div className='body'>
-        <Nav id='navhead' className='navbar navbar-expand-lg navbar-light bg-light justify-content-between ps-2 '>
+        <Nav id='navhead' className='navbar '>
           
-          <img src='./icon-menu.svg' alt='menu' className='' />
+          <img src='./icon-menu.svg' alt='menu' className='menu-icon col-1 ps-2 img-fluid' />
          
-          <img src='./logo.svg' alt='logo' className='navbar-logo ps-5' />
+          <img src='./logo.svg' alt='logo' className='navbar-logo ps-3' />
           
           
-          <div className='collapse navbar-collapse' id='navbarNavDropdown'>
-            <ul className='navbar-nav mr-auto inline' id='ul_navbar'>
+          <div className='collapse ' id='navbarNavDropdown'>
+            <ul className='navbar-nav ' id='ul_navbar'>
               <li className='nav-items'>Collections</li>
               <li className='nav-items'>Men</li>
               <li className='nav-items'>Women</li>

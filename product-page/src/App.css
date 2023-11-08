@@ -5,30 +5,14 @@
 
 .navbar{
   border-bottom: 2px solid rgb(230, 225, 225);  
-}
-#brand{
-  color: hsl(0, 0%, 0%);
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 30px;
-}
-#ul_navbar{
+  background-color: white;
   display: flex;
-  gap: 30px;
-  position: static;  
-}
-#ul_navbar li{
-  position: static;
-  color: rgb(80, 82, 80);
-  padding: 10px;
-  margin-top: -15px;
+  flex-direction: row;
+  width: 100%;
+
 }
 
-#ul_navbar li:hover{
-  border-bottom:3px solid red ;
-  cursor: pointer;
-  margin-top: -15px;
-  padding: 10px;
-}
+
 .cart_avatar{
   margin-left: 20px;
   position: relative;
@@ -72,11 +56,10 @@
 
 section{
   display: flex;
-  gap: 4rem;
   
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   section {
     display: block;
     width: 100%;
@@ -171,82 +154,68 @@ section{
     font-weight: bold;
 
   }
+ 
+ 
   
 }
-
-@media (min-width:510px) and (max-width:800px) {
+@media (min-width:610px) and (max-width:805px) {
   .App{
     padding: 0rem 2rem;
   }
-  .navhead{
-    padding: 40px;
+  .menu-icon{
+    display: none;
   }
-  .info{
-    padding: 2rem;
-    margin-top: 7rem;
-    text-align: left;
-  }
-  .main_display{
-    padding: 5rem 0px;
-  }
-  .cartopen{
-    padding: 5px;
-    margin: 15px ;
-    position: absolute;
-    height: 30vh;
-    right: -9%;
-    top: -4.5%;
-    z-index: 1;
-    border-radius: 4px;
-    box-shadow:0px 3px 10px 3px rgba(0, 0, 0, 0.2);
-    background-color: white;
-  }
-  .cart-checkout p{
-   color:  rgb(197, 190, 190);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+#ul_navbar{
+  display: flex;
+  gap: 10px;
+  position: inherit;  
+}
+#ul_navbar li{
+  position: static;
+  font-size: 12px;
+  color: rgb(80, 82, 80);
+  padding: 10px;
+  margin-top: -15px;
+}
 
-  }
-  .cartopen h2{
-    font-size: 20px;
-    text-align: left;
-    left: 3%;
-    padding: 5px 0px;
-    position: relative;
-   
-  }
-  .cart-div{
-    margin-top: -20px;
-  }
-  .cart-div h4{
-    font-size: 18px;
-    text-align: left;
-    color: rgb(197, 190, 190);
-    font-weight: bold;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: -15px;
-    padding: 0px 15px;
-  }
-  .cart-div h4 span{
-    color: rgb(95, 89, 89);
-  }
+#ul_navbar li:hover{
+  border-bottom:3px solid red ;
+  cursor: pointer;
+  margin-top: -15px;
+  padding: 10px;
+}
   .prev_image, .next_image{
     display: none;
   }
-  section{
+  section {
+    display: flex;
     gap: 1rem;
+    width: 100%;
+    margin-top: 6rem; 
+     
   }
-}
+  .info{
+    padding: 2rem;
+    margin-top: 1rem;
+    text-align: left;
+    
+  }
 
-@media (min-width: 810px) {
+}
+@media (min-width: 805px) {
   .App{
-    padding: 0rem 6rem;
+    padding: 0rem ;
+  }
+  .menu-icon{
+    display: none;
   }
   .navhead{
     padding: 40px;
   }
   .info{
     padding: 2rem;
-    margin-top: 8rem;
+    margin-top: 10rem;
     text-align: left;
   }
   .main_display{
@@ -297,7 +266,6 @@ section{
   }
   
 }
-
 
 .main_displayimage{
   border-radius: 20px;
