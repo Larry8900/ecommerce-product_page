@@ -2,11 +2,13 @@
     border-radius: 10px;
     margin-bottom: 30px;
     padding: 0px;
+    
+ 
 }
 
 .thumbnail{
     display:grid;
-    gap: 10px;
+    gap: 20px;
     grid-template-columns: repeat(auto-fit,minmax(20px,1fr));
     border: none;
     background: none;
@@ -15,6 +17,16 @@
     cursor: pointer;
 }
 @media (min-width: 610px) {
+    .setDiv{
+        position:relative;
+	    width: 100%;
+        padding: 0px;
+        display: flex;
+        margin: 0;
+      }
+      .main-img{
+        flex-grow: 2;
+      }
 
 }
 @media (max-width: 600px) {
@@ -40,13 +52,14 @@
         top: 45%;
         
       }
-
       .setDiv{
         position: relative;
 	    width: 100%;
         padding: 0px;
         margin: 0;
       }
+
+      
       
       */
     .show_image{
