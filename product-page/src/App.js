@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Nav, Button, NavLink, NavItem} from 'react-bootstrap'
 import Modal from './Modal';
 import ShowModal from './Modal';
+import Checkout from './checkout';
 
 import Cart from './Cart';
 
@@ -84,7 +85,7 @@ function App() {
         <section className='container col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
             <div className='main_display ps-0'>
-            
+            <checkout />
               {cartOpen && (
                 <div className='cartopen col-xs-11 col-sm-11 col-md-4 col-xl-4 '>
                   <h2>Cart</h2>
